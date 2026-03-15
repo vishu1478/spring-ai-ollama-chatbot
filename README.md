@@ -1,25 +1,102 @@
-# Getting Started
+# Spring AI + Ollama Local Chatbot
 
-### Reference Documentation
-For further reference, please consider the following sections:
+A simple AI chatbot built using **Spring Boot** and **Spring AI** that connects to a locally running **Ollama LLM (Llama3)**.
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.5.11/maven-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.5.11/maven-plugin/build-image.html)
-* [Spring Web](https://docs.spring.io/spring-boot/3.5.11/reference/web/servlet.html)
-* [Ollama](https://docs.spring.io/spring-ai/reference/api/chat/ollama-chat.html)
+This project demonstrates how to build a **local AI-powered backend application without using paid APIs**.
 
-### Guides
-The following guides illustrate how to use some features concretely:
+---
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+## 🚀 Features
 
-### Maven Parent overrides
+- Local AI model using Ollama
+- Llama3 integration
+- Spring AI chat client
+- REST API endpoint for AI queries
+- Simple HTML UI for chatting
 
-Due to Maven's design, elements are inherited from the parent POM to the project POM.
-While most of the inheritance is fine, it also inherits unwanted elements like `<license>` and `<developers>` from the parent.
-To prevent this, the project POM contains empty overrides for these elements.
-If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
+---
 
+## 🛠 Tech Stack
+
+- Java 17
+- Spring Boot
+- Spring AI
+- Ollama
+- Llama3 LLM
+- Maven
+
+---
+
+## 📂 Project Architecture
+
+```
+Browser UI
+     │
+     ▼
+Spring Boot REST API
+     │
+     ▼
+Spring AI
+     │
+     ▼
+Ollama API (localhost:11434)
+     │
+     ▼
+Llama3 Model
+```
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1 Install Ollama
+
+Install Ollama from:
+
+https://ollama.com
+
+Run the model:
+
+```
+ollama run llama3
+```
+
+---
+
+### 2 Run the Spring Boot Application
+
+```
+mvn spring-boot:run
+```
+
+---
+
+### 3 Call the API
+
+```
+http://localhost:8080/ai/ask?question=Explain Spring Boot
+```
+
+---
+
+## 📸 Example Response
+
+```
+Spring Boot is a Java framework used to build standalone production-ready Spring applications.
+```
+
+---
+
+## 📌 Future Improvements
+
+- Streaming responses
+- Chat history
+- Vector database integration
+- AI document search
+- Web UI improvements
+
+---
+
+## 👨‍💻 Author
+
+Vishwajeet Agrwal
